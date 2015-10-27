@@ -26,7 +26,7 @@ var stripNewlinesInCodeBlocks = function (content) {
 };
 
 var removePragmas = function (content) {
-  return content.replace(/# -*-.+-\*-\n/g, '')
+  return content.replace(/# -\*-.+-\*-\n/g, '')
 }
 
 var transformContent = function (content) {
@@ -38,8 +38,8 @@ var transformContent = function (content) {
   )(content);
 };
 
-var isLitpyFile = function (path) {
-  return path.search(/\.litpy\./) !== -1
+var isLitpyFile = function (content) {
+  return content.search(/# -\*- litpy -\*-/) !== -1
 };
 
 module.exports = {
@@ -47,7 +47,7 @@ module.exports = {
   hooks: {
 
     'page:before': function (page) {
-      if (isLitpyFile(page.path)) {
+      if (isLitpyFile(page.content)) {
         page.content = transformContent(page.content);
       }
       return page
