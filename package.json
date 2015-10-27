@@ -1,0 +1,21 @@
+{
+    "name": "gitbook-plugin-literate-python",
+    "description": "Quick and dirty literate Python plugin for GitBook",
+    "main": "index.js",
+    "scripts": {
+        "test": "node test.js"
+    },
+    "version": "1.0.0",
+    "engines": {
+      "gitbook": ">=2.4.1"
+    },
+    "homepage": "https://github.com/Bradfield/gitbook-plugin-literate-python",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Bradfield/gitbook-plugin-literate-python.git"
+    },
+    "license": "Apache-2.0",
+    "bugs": {
+      "url": "https://github.com/Bradfield/gitbook-plugin-literate-python/issues"
+    }
+}
